@@ -52,9 +52,8 @@ imprimir_Profesiones(sacha)
 
 const MAYORIA_EDAD = 18
 
-function Mayor_de_edad(persona){
-    return persona.edad >= MAYORIA_EDAD
-}
+const Mayor_de_edad = ({edad}) =>  edad >= MAYORIA_EDAD
+const Menor_de_edad = ({edad}) => edad < MAYORIA_EDAD
 
 
 
@@ -65,5 +64,18 @@ function imprimir_si_mayor_Edad(persona){
         console.log(`${persona.nombre} es mayor de edad`)
     } else{
         console.log(`${persona.nombre} es menor de edad`)
+    }
+}
+
+
+function permitir_Acceso(persona){
+    if(!Mayor_de_edad(persona)) {
+        console.log('ACCESO DENEGADO')
+    }
+}
+
+function denegar(persona){
+    if(!Menor_de_edad(persona)) {
+        console.log('ACCESO CONSEDIDO')
     }
 }
