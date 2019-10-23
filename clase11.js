@@ -10,6 +10,12 @@ var sacha = {
     drone: true
 }
 
+var juan = {
+    nombre: 'juan',
+    apellido: 'medez',
+    edad: 13
+}
+
 function imprimir_Profesiones(persona) {
     console.log(`${persona.nombre} es:`)
 
@@ -42,3 +48,22 @@ function imprimir_Profesiones(persona) {
 }
 
 imprimir_Profesiones(sacha)
+
+
+var mayoria_edad = 18
+
+function Mayor_de_edad(persona){
+    return persona.edad >= mayoria_edad
+}
+
+
+
+function imprimir_si_mayor_Edad(persona){
+    //sebastian es mayor de edad
+    //sacha es menor de edad 
+    if(Mayor_de_edad(persona)) {
+        console.log(`${persona.nombre} es mayor de edad`)
+    } else{
+        console.log(`${persona.nombre} es menor de edad`)
+    }
+}
