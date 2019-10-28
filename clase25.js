@@ -12,22 +12,33 @@ const opst = {crossDomain: true}
 function obternerPersonaje (id, callback) {
     const url = `${API_URL}${PEOPLE_URL.replace(':id', id)}`
    
-    $.get(url, opst, function (persona) {
-        console.log(`hola yo soy ${persona.name}`)
-
-        if (callback){
-            callback()
-        }
+    $
+    .get(url, opst, callback)
+    .fail(function () {
+        console.log(`sucedio un error. y no pudimos encontrar el personaje ${id}`)
     })
 
 }
 
-obternerPersonaje(1, function () {
-    obternerPersonaje(2, function () {
-        obternerPersonaje(3, function () {
-            obternerPersonaje(4, function () {
-                obternerPersonaje(5, function (){
-                    obternerPersonaje(6,function(){
+
+
+obternerPersonaje(1, function (personaje) {
+    console.log(`hola yo soy ${personaje.name}`)
+
+    obternerPersonaje(2, function (personaje) {
+        console.log(`hola yo soy ${personaje.name}`)
+
+        obternerPersonaje(3, function (personaje) {
+            console.log(`hola yo soy ${personaje.name}`)
+
+            obternerPersonaje(4, function (personaje) {
+                console.log(`hola yo soy ${personaje.name}`)
+
+                obternerPersonaje(5, function (personaje){
+                    console.log(`hola yo soy ${personaje.name}`)
+
+                    obternerPersonaje(6, function(personaje){
+                        console.log(`hola yo soy ${personaje.name}`)
                         
                     })
                 })
